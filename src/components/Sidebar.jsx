@@ -3,8 +3,8 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <>
-    <div className='text-white'>
-        <h3>Moje Ligi</h3>
+    <div className='text-white text-sm'>
+        <h3 className='font-bold mb-2'>Moje Ligi</h3>
         <div className='flex flex-col'>
             <a href="#">Liga I</a>
             <a href="#">Liga II</a>

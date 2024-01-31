@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import { TeamProfile } from './components/TeamProfile';
-import { Layout } from './components/Layout';
+
+import { GamesResults } from './components/GamesResults';
 
 
 const router = createBrowserRouter([
@@ -15,9 +16,14 @@ const router = createBrowserRouter([
     errorElement: <p>error</p>,
     children:[
       {
+        path:'',
+        element: <GamesResults/>
+      },
+      {
         path:'team/:teamName',
         element: <TeamProfile/>
       }
+
     ]
   },
 ]);
