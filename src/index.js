@@ -1,38 +1,42 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter,RouterProvider } from 'react-router-dom';
-import { TeamProfile } from './components/TeamProfile';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { TeamProfile } from "./components/TeamProfile";
+import { GamesResults } from "./components/GamesResults";
 
-import { GamesResults } from './components/GamesResults';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    ),
     errorElement: <p>error</p>,
-    children:[
+    children: [
       {
-        path:'',
-        element: <GamesResults/>
+        path: "",
+        element: <GamesResults />,
       },
       {
-        path:'team/:teamName',
-        element: <TeamProfile/>
-      }
-
-    ]
+        path: "/team/:teamName",
+        element: <TeamProfile />,
+      },
+    ],
   },
 ]);
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
