@@ -21,7 +21,7 @@ function App() {
           <div className="p-2 w-[230px] text-left">
             <Sidebar />
           </div>
-          <div className=" w-full bg-zinc-800 text-zinc-300 rounded-lg">
+          <div className=" w-full bg-zinc-800 text-zinc-300 rounded-lg p-5">
             <Outlet />
           </div>
           <div className="w-[400px] flex flex-col gap-3">

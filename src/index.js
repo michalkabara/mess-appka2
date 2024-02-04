@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { TeamProfile } from "./components/TeamProfile";
 import { GamesResults } from "./components/GamesResults";
+import { TeamsGroup } from "./components/TeamsGroup";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -24,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <GamesResults />,
+      },
+      {
+        path: "/game/:teamName",
+        element: <TeamProfile />,
+      },
+      {
+        path: "/teams",
+        element: <TeamsGroup />,
       },
       {
         path: "/team/:teamName",
